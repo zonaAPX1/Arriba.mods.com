@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ariba MODS</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+width:70px;
+border-radius:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+}
+
+.hero{
+min-height:85vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:50px;
+background:linear-gradient(135deg,#7b2ff7,#00c6ff);
+}
+
+.hero-content{
+max-width:600px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#00ff95;
+color:black;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(0,255,149,.7);}
+70%{box-shadow:0 0 0 20px rgba(0,255,149,0);}
+100%{box-shadow:0 0 0 0 rgba(0,255,149,0);}
+}
+
+.features{
+padding:80px 10%;
+text-align:center;
+}
+
+.features h2{
+margin-bottom:40px;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+width:280px;
+}
+
+.screenshots{
+padding:80px 10%;
+text-align:center;
+}
+
+.gallery{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.gallery img{
+width:250px;
+border-radius:20px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#111827;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div>
+<img src="logo.png" class="logo">
+</div>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#funciones">Funciones</a>
+<a href="#capturas">Capturas</a>
+</nav>
+</header>
+
+<section class="hero" id="inicio">
+<div class="hero-content">
+<h1>Ariba MODS</h1>
+<p>Descarga la última versión y disfruta de todas las funciones disponibles.</p>
+
+<a class="btn"
+href="https://www.mediafire.com/file/udm8asraz2n6one/com.MODS.STUDIO_signed.apk/file"
+target="_blank">
+Descargar APK
+</a>
+</div>
+</section>
+
+<section class="features" id="funciones">
+<h2>Características</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Rápida</h3>
+<p>Optimizada para máximo rendimiento.</p>
+</div>
+
+<div class="card">
+<h3>Segura</h3>
+<p>Actualizaciones constantes.</p>
+</div>
+
+<div class="card">
+<h3>Moderna</h3>
+<p>Interfaz elegante y fácil de usar.</p>
+</div>
+
+</div>
+</section>
+
+<section class="screenshots" id="capturas">
+<h2>Capturas</h2>
+
+<div class="gallery">
+<img src="logo.png">
+<img src="logo.png">
+<img src="logo.png">
+</div>
+</section>
+
+<footer>
+<p>© 2025 Ariba MODS - Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
