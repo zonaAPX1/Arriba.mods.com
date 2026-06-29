@@ -3,193 +3,602 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ariba MODS</title>
+<title>Ariba MODS | Plataforma Oficial</title>
 
 <style>
+:root{
+--primary:#2563eb;
+--secondary:#1e40af;
+--dark:#0f172a;
+--gray:#64748b;
+--light:#f8fafc;
+--border:#e2e8f0;
+--white:#ffffff;
+}
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#0f172a;
-color:white;
+background:var(--light);
+color:#334155;
+line-height:1.6;
 }
 
+/* HEADER */
+
 header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(10px);
+box-shadow:0 2px 12px rgba(0,0,0,.08);
+z-index:1000;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+.navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
+padding:18px 0;
 }
 
 .logo{
-width:70px;
-border-radius:15px;
+display:flex;
+align-items:center;
+gap:12px;
+font-size:24px;
+font-weight:700;
+text-decoration:none;
+color:var(--dark);
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:12px;
 }
 
 nav a{
-color:white;
 text-decoration:none;
-margin-left:20px;
-font-weight:bold;
+margin-left:25px;
+color:#334155;
+font-weight:600;
+transition:.3s;
 }
+
+nav a:hover{
+color:var(--primary);
+}
+
+/* HERO */
 
 .hero{
-min-height:85vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:50px;
-background:linear-gradient(135deg,#7b2ff7,#00c6ff);
-}
-
-.hero-content{
-max-width:600px;
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+color:white;
+padding:180px 20px 120px;
+text-align:center;
 }
 
 .hero h1{
-font-size:60px;
+font-size:64px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
-margin-bottom:30px;
+max-width:800px;
+margin:auto;
+font-size:22px;
+opacity:.95;
+margin-bottom:40px;
 }
 
 .btn{
 display:inline-block;
-padding:15px 35px;
-background:#00ff95;
-color:black;
+padding:15px 32px;
+margin:10px;
+border-radius:10px;
 text-decoration:none;
-border-radius:50px;
-font-weight:bold;
-animation:pulse 2s infinite;
+font-weight:600;
+transition:.3s;
 }
 
-@keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(0,255,149,.7);}
-70%{box-shadow:0 0 0 20px rgba(0,255,149,0);}
-100%{box-shadow:0 0 0 0 rgba(0,255,149,0);}
+.btn-primary{
+background:white;
+color:var(--primary);
 }
 
-.features{
-padding:80px 10%;
+.btn-secondary{
+border:2px solid white;
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* SECCIONES */
+
+section{
+padding:90px 0;
+}
+
+.section-title{
 text-align:center;
+font-size:40px;
+margin-bottom:15px;
+color:var(--dark);
 }
 
-.features h2{
-margin-bottom:40px;
+.section-subtitle{
+text-align:center;
+max-width:700px;
+margin:auto;
+margin-bottom:50px;
+color:var(--gray);
 }
 
-.cards{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-justify-content:center;
+/* TARJETAS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
-background:#1e293b;
-padding:25px;
-border-radius:15px;
-width:280px;
+background:white;
+padding:30px;
+border-radius:16px;
+border:1px solid var(--border);
+transition:.3s;
 }
 
-.screenshots{
-padding:80px 10%;
-text-align:center;
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-.gallery{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
+.card h3{
+margin-bottom:15px;
+color:var(--dark);
 }
 
-.gallery img{
-width:250px;
+/* SOBRE NOSOTROS */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
 border-radius:20px;
 }
 
-footer{
+/* ESTADÍSTICAS */
+
+.stats{
+background:#0f172a;
+color:white;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
 text-align:center;
+}
+
+.stat h3{
+font-size:42px;
+margin-bottom:10px;
+}
+
+/* FAQ */
+
+.faq{
+max-width:900px;
+margin:auto;
+}
+
+details{
+background:white;
+margin-bottom:15px;
 padding:20px;
-background:#111827;
+border-radius:12px;
+border:1px solid var(--border);
+}
+
+summary{
+cursor:pointer;
+font-weight:600;
+}
+
+/* CONTACTO */
+
+.contact{
+text-align:center;
+}
+
+.contact-box{
+background:white;
+padding:40px;
+border-radius:20px;
+max-width:700px;
+margin:auto;
+border:1px solid var(--border);
+}
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+color:white;
+padding:40px 0;
+text-align:center;
+}
+
+footer p{
+opacity:.8;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+nav{
+display:none;
+}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-<div>
-<img src="logo.png" class="logo">
-</div>
+<div class="container navbar">
+
+<a href="#" class="logo">
+<img src="logo.png" alt="Logo">
+<span>Ariba MODS</span>
+</a>
 
 <nav>
 <a href="#inicio">Inicio</a>
-<a href="#funciones">Funciones</a>
-<a href="#capturas">Capturas</a>
+<a href="#servicios">Servicios</a>
+<a href="#empresa">Empresa</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#faq">FAQ</a>
+<a href="#contacto">Contacto</a>
+<a href="BlueGames_Completa.html" style="background:#1e63ff;color:white;padding:8px 16px;border-radius:8px;margin-left:25px;">🎮 BlueGames</a>
 </nav>
+
+</div>
 </header>
 
 <section class="hero" id="inicio">
-<div class="hero-content">
+
+<div class="container">
+
 <h1>Ariba MODS</h1>
-<p>Descarga la última versión y disfruta de todas las funciones disponibles.</p>
 
-<a class="btn"
-href="https://www.mediafire.com/file/udm8asraz2n6one/com.MODS.STUDIO_signed.apk/file"
-target="_blank">
-Descargar APK
+<p>
+Plataforma digital enfocada en ofrecer herramientas modernas,
+documentación centralizada y recursos optimizados para la comunidad.
+</p>
+
+<a href="https://www.mediafire.com/file/udm8asraz2n6one/com.MODS.STUDIO_signed.apk/file"
+target="_blank"
+class="btn btn-primary">
+⬇ Descargar APK
 </a>
+
+<a href="https://zonaapx1.github.io/Wikipedia.com/"
+target="_blank"
+class="btn btn-secondary">
+? Ariba Wiki
+</a>
+
 </div>
+
 </section>
 
-<section class="features" id="funciones">
-<h2>Características</h2>
+<section id="servicios">
 
-<div class="cards">
+<div class="container">
 
-<div class="card">
-<h3>Rápida</h3>
-<p>Optimizada para máximo rendimiento.</p>
-</div>
+<h2 class="section-title">Servicios</h2>
 
-<div class="card">
-<h3>Segura</h3>
-<p>Actualizaciones constantes.</p>
-</div>
+<p class="section-subtitle">
+Diseñados para brindar estabilidad, accesibilidad y una experiencia moderna.
+</p>
+
+<div class="grid">
 
 <div class="card">
-<h3>Moderna</h3>
-<p>Interfaz elegante y fácil de usar.</p>
+<h3>⚡ Rendimiento</h3>
+<p>Aplicaciones optimizadas para una experiencia fluida.</p>
+</div>
+
+<div class="card">
+<h3>? Seguridad</h3>
+<p>Actualizaciones constantes y mejoras continuas.</p>
+</div>
+
+<div class="card">
+<h3>? Documentación</h3>
+<p>Centro de información y recursos mediante Ariba Wiki.</p>
+</div>
+
+<div class="card">
+<h3>? Soporte</h3>
+<p>Atención a consultas, reportes y sugerencias.</p>
 </div>
 
 </div>
+
+</div>
+
 </section>
 
-<section class="screenshots" id="capturas">
-<h2>Capturas</h2>
+<section id="empresa">
 
-<div class="gallery">
-<img src="logo.png">
-<img src="logo.png">
-<img src="logo.png">
+<div class="container">
+
+<div class="about">
+
+<div>
+
+<h2>Sobre Ariba MODS</h2>
+
+<p>
+Ariba MODS es un proyecto enfocado en el desarrollo y distribución
+de recursos digitales modernos para la comunidad.
+</p>
+
+<br>
+
+<p>
+Nuestro objetivo es ofrecer una plataforma estable,
+documentada y accesible para todos los usuarios.
+</p>
+
 </div>
+
+<div>
+<img src="logo.png" alt="Ariba MODS">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="proyectos">
+
+<div class="container">
+
+<h2 class="section-title">Nuestros Proyectos</h2>
+
+<p class="section-subtitle">
+Recursos y plataformas que forman parte del ecosistema Ariba.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Ariba MODS</h3>
+<p>Aplicación principal del proyecto.</p>
+</div>
+
+<div class="card">
+<h3>Ariba Wiki</h3>
+<p>Documentación, guías y recursos oficiales.</p>
+</div>
+
+<div class="card">
+<h3>Centro de Contacto</h3>
+<p>Canal oficial para soporte y consultas.</p>
+</div>
+
+<div class="card" style="border-left:4px solid #1e63ff">
+<h3>🎮 BlueGames</h3>
+<p>Portal de juegos y descargas de la comunidad.</p>
+<a href="BlueGames_Completa.html" style="display:inline-block;margin-top:12px;background:#1e63ff;color:white;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;">Visitar Portal</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Disponibilidad</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Compromiso</p>
+</div>
+
+<div class="stat">
+<h3>∞</h3>
+<p>Innovación</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="faq">
+
+<div class="container">
+
+<h2 class="section-title">Preguntas Frecuentes</h2>
+
+<div class="faq">
+
+<details>
+<summary>¿La aplicación es gratuita?</summary>
+<p>Sí, la descarga es gratuita.</p>
+</details>
+
+<details>
+<summary>¿Dónde encuentro documentación?</summary>
+<p>En Ariba Wiki.</p>
+</details>
+
+<details>
+<summary>¿Cómo puedo contactar con soporte?</summary>
+<p>Mediante el Centro de Contacto.</p>
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contacto" class="contact">
+
+<div class="container">
+
+<h2 class="section-title">Contacto</h2>
+
+<div class="contact-box">
+
+<p>
+¿Necesitas ayuda, soporte técnico o reportar algún problema?
+</p>
+
+<br>
+
+<a href="https://zonaapx1.github.io/Contacto/"
+target="_blank"
+class="btn btn-primary">
+📩 Centro de Contacto
+</a>
+
+</div>
+
+</div>
+
 </section>
 
 <footer>
-<p>© 2025 Ariba MODS - Todos los derechos reservados.</p>
+
+<div class="container">
+
+<h3>Ariba MODS</h3>
+
+<br>
+
+<p>
+© 2026 Ariba MODS. Todos los derechos reservados.
+</p>
+
+</div>
+
 </footer>
+
+
+<!-- SOCIAL TICKER ANIMATION -->
+<style>
+.social-ticker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #0f172a, #1e3a8a, #0f172a);
+  border-top: 2px solid #3b82f6;
+  padding: 10px 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+.social-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 25s linear infinite;
+}
+.social-ticker-track:hover { animation-play-state: paused; }
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 40px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+.social-item:hover { color: #60a5fa; }
+.social-item .icon { font-size: 22px; }
+.social-item .label { opacity: 0.75; font-weight: 400; font-size: 13px; margin-left: 4px; }
+.social-divider { color: #3b82f6; font-size: 20px; padding: 0 10px; align-self: center; }
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+body { padding-bottom: 55px; }
+</style>
+<div class="social-ticker">
+  <div class="social-ticker-track">
+    <a class="social-item" href="https://www.facebook.com/raul.parra" target="_blank"><span class="icon">📘</span> Facebook <span class="label">Raúl Parra</span></a>
+    <span class="social-divider">★</span>
+    <a class="social-item" href="https://discord.com/invite/zxAtkAkC" target="_blank"><span class="icon">💬</span> Discord <span class="label">Únete al servidor</span></a>
+    <span class="social-divider">★</span>
+    <a class="social-item" href="https://www.facebook.com/raul.parra" target="_blank"><span class="icon">🎮</span> Síguenos en redes <span class="label">BlueGames</span></a>
+    <span class="social-divider">★</span>
+    <a class="social-item" href="https://discord.com/invite/zxAtkAkC" target="_blank"><span class="icon">🔔</span> Discord <span class="label">¡Entra ya!</span></a>
+    <span class="social-divider">★</span>
+    <a class="social-item" href="https://www.facebook.com/raul.parra" target="_blank"><span class="icon">📘</span> Facebook <span class="label">Raúl Parra</span></a>
+    <span class="social-divider">★</span>
+    <a class="social-item" href="https://discord.com/invite/zxAtkAkC" target="_blank"><span class="icon">💬</span> Discord <span class="label">Únete al servidor</span></a>
+    <span class="social-divider">★</span>
+    <a class="social-item" href="https://www.facebook.com/raul.parra" target="_blank"><span class="icon">🎮</span> Síguenos en redes <span class="label">BlueGames</span></a>
+    <span class="social-divider">★</span>
+    <a class="social-item" href="https://discord.com/invite/zxAtkAkC" target="_blank"><span class="icon">🔔</span> Discord <span class="label">¡Entra ya!</span></a>
+    <span class="social-divider">★</span>
+  </div>
+</div>
 
 </body>
 </html>
